@@ -1,8 +1,13 @@
 #include <iostream> 
 #define MAX_STACK_SIZE 10 using namespace std;
 
-struct Element{ int data; Element *next; };
-class MyStack { private: Element *head=NULL;
+struct Element{ 
+int data; 
+Element *next; };
+
+class MyStack { 
+private: 
+Element *head=NULL;
 
 public:
 bool isEmpty(){
@@ -13,7 +18,7 @@ bool isEmpty(){
 	}
 
 void push(int databaru){
-		Element *baru=new Element;
+	Element *baru=new Element;
     	baru->head=databaru;
         baru->next=data;
         head=baru;
@@ -21,11 +26,11 @@ void push(int databaru){
 }
 void pop(){
 	if(isEmpty()==false){
-		Element *baru=new Element;
-		baru=head;
-		head=head->next;
-		delete baru;
-		cout<<"Data pop\n"<<endl;
+	Element *baru=new Element;
+	baru=head;
+	head=head->next;
+	delete baru;
+	cout<<"Data pop\n"<<endl;
     } else {
         cout<<"tidak ada stack"<<endl;
     }
@@ -36,8 +41,8 @@ void printStackList(){
 
     if (isEmpty()==false){
         while(head!=NULL){
-        	cout<<bantu->data<<endl;
-        	bantu=bantu->next;
+        cout<<bantu->data<<endl;
+        bantu=bantu->next;
 		}
     } else {
         cout<<"tidak ada stack"<<endl;
@@ -45,7 +50,7 @@ void printStackList(){
 }
 int getTop(){
 	Element *top=head;
-    return top->data;
+    	return top->data;
 }
 };
 
@@ -61,35 +66,38 @@ cout<<"3.Top Stack"<<endl;
 cout<<"4.Tampilkan Stack"<<endl; 
 cout<<"5.Exit"<<endl; 
 cout<<"pilihan anda : "; 
-cin>>x; switch(x){ 
-		case 1:cout<<endl; 
-		cout<<"data: "; 
-		cin>>databaru; 
-		cout<<endl; 
-		y.push(databaru);
-		break;
+cin>>x; 
+switch(x){ 
 
-		case 2:
-		cout<<endl;
-		y.pop();
-		break;
+	case 1:cout<<endl; 
+	cout<<"data: "; 
+	cin>>databaru; 
+	cout<<endl; 
+	y.push(databaru);
+	break;
 
-		case 3:
-		cout<<endl;
-		if(y.isEmpty()==false){
-		cout<<y.getTop()<<endl;
-		}else{
-			cout<<"tidak ada stack";
-			}
-		cout<<endl;break;
+	case 2:
+	cout<<endl;
+	y.pop();
+	break;
 
-		case 4:
-		cout<<endl;
-		y.printStackList();
-		break;
+	case 3:
+	cout<<endl;
+	if(y.isEmpty()==false){
+	cout<<y.getTop()<<endl;
+	}else{
+	cout<<"tidak ada stack";
+	}
+	cout<<endl;
+	break;
 
-		default:cout<<"\tselesai";
+	case 4:
+	cout<<endl;
+	y.printStackList();
+	break;
 
+	default:cout<<"\tselesai";
 	}
 }
-while (x!=5); }
+while (x!=5); 
+}
